@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切版練習</title>
+    <!-- link從隔壁import css過來使用 -->
+    <link rel="stylesheet" href="css/my.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        /* 歸零所有預設間距 *字號是通用符號*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--cat-bg-cream);
+            font-family: "DotGothic16", sans-serif;
+        }
+
+        .wrapper {
+            width: 1024px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .imgbox {
+            width: 1024px;
+            height: 400px;
+            background-color: rgb(53, 134, 214);
+            /* 背景圖 */
+            background-image: url("images/cat02.avif");
+            /* 整張圖抓取定位 */
+            background-position: center -230px;
+            background-size: cover;
+        }
+
+        nav {
+            background-color: var(--cat-banner-sky);
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        nav ul {
+            display: inline-block;
+        }
+
+        nav ul li {
+            float: left;
+            /* 調整li的圓點為none */
+            list-style-type: none;
+        }
+
+        nav ul li a {
+            /* 調整文字底線為none */
+            text-decoration: none;
+            display: block;
+            background-color: var(--cat-btn-ginger);
+            /* margin調整與外部距離
+            padding調整內部距離 */
+            margin-right: 30px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            /* 設定圓角 */
+            border-radius: 20%;
+            /* 設定陰影 盡量用調整的 */
+            /* X Y 渲染 寬度 顏色 */
+            box-shadow: 2px 2px 2px 2px #dad867;
+            /* 跟hover連動 調整改變的時間 */
+            transition: border-radius 1s, box-shadow 1s;
+            color: var(--cat-btn-text);
+        }
+
+        /* hover = 當滑鼠觸碰到時產生改變 */
+        nav ul li a:hover {
+            box-shadow: 2px 2px 2px 2px #ff0000;
+        }
+
+        .content {
+            background-color: var(--cat-input-paw);
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .content h1 {
+            padding-top: 5px;
+            padding-bottom: 15px;
+            color: #fd4c4c;
+            font-size: 32px;
+        }
+
+        .content p {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 16px;
+            color: var(--cat-text-mocha);
+        }
+
+        .content a {
+            display: block;
+            background-color: var(--cat-more-pink);
+            width: 130px;
+            height: 40px;
+            /* Y軸X軸 */
+            margin: 0 auto;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 20px;
+            /* 字體粗細 */
+            font-weight: bold;
+            /* 跟height一樣的話會上下置中 */
+            line-height: 40px;
+            border-radius: 7px;
+            box-shadow: 2px 2px 2px 2px #f50e0e;
+            transition: 0.5s;
+        }
+
+        .content a:hover {
+            box-shadow: 2px 2px 2px 2px #ad6464;
+        }
+
+        .footer {
+            background-color: #c03939;
+            margin-top: 10px;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .footer p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 響應式網站 */
+        @media screen and (max-width:1200px) and (min-width:1025px) {
+            .imgbox{
+                background-image: url(images/cat03.avif);
+                background-position: -200px;
+                
+            }
+        }
+        @media screen and (max-width:1024px){
+            .wrapper{
+                width: 100%;
+            }      
+            .imgbox{
+                width: 100%;
+                background-image: url(images/cat01.avif);
+                height: 140px;
+            }  
+            nav ul{
+                display: block;
+                padding-left: 10px;
+                margin: 0;
+            }
+            nav ul li{
+                float: none;
+                margin-bottom: 10px;
+            }
+            nav ul li a {
+                background-color: var(--cat-btn-ginger);
+                color: var(--cat-btn-text);
+            }
+            .content{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .content p{
+                font-size: 18px;
+                line-height: 1.4;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    # id
+    . class
+     -->
+    <div class="wrapper">
+        <div class="banner">
+            <div class="imgbox"></div>
+            <!-- nav>ul>li*5>a -->
+            <!-- alt多選 -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-house-chimney btn-text-sky"></i>首頁</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-regular fa-newspaper btn-text-sky"></i>最新消息</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-shop btn-text-sky"></i>合作店家</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-circle-info btn-text-sky"></i>關於我們</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-envelope btn-text-sky"></i>聯絡我們</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h1 class="fw-400"><i class="fa-regular fa-hand-spock" style="color: rgb(116, 192, 252);"></i>歡迎光臨</h1>
+            <!-- ctlorem100 = 產生100字的中文文本 -->
+            <p class="fw-400">推薦神秘好多頓時一定要的話現象，本書感染強大執行時間，特別是角度如何不如付款奧客，定位是的集團財務限制防止制度上門新技術一個月對待股票地位，你們的情形監督難道，上去英國，懷疑面向日前不在查看是什麼有時候，內部然而解壓密碼皇帝精靈呼吸印刷這款高中思想，為你。
+            </p>
+            <p class="fw-400">安裝執行時間精美配置繼續等人，難得由於大約就好監控眼神一絲，患者三大臉上好看主義，娛樂之下魔獸許可發佈時間創業條例見到一道某種障礙拒絶，遠遠新聞不敢不同，印象快速銷售監控，旁邊而在小子一個月，細節推。  
+            </p>
+            <p class="fw-400">規律條款語文很快模糊不敢，不是很安全防止你自己找到都有天天陽光庫存優質大師各國機票老人，長大寶貝所有學歷上帝農民一名請大家遠遠業績，參數競爭性質包裝，欄目南方很有第二章裝修都要她說每個人來自，合作時尚設施工人，體會說明地址不太沒有任何專門瀏覽一隻電池，婦女一切都相信公主事件失敗指揮應用只有，羅東有。
+            </p>
+            <a href="#"><i class="fa-solid fa-circle-info" style="color: rgb(116, 192, 252);"></i>了解更多</a>
+        </div>
+        <div class="footer">
+            <p>PowerBy me.2026.05</p>
+        </div>
+    </div>
+</body>
+
+</html>
