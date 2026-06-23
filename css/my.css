@@ -1,0 +1,212 @@
+ /* imort google字型
+        在body使用font-family套用字型 */
+ @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+ /* 設定顏色關鍵字
+        底下用var(變數)來替代 */
+ :root {
+     /* 整體背景 - 奶油白 */
+     --cat-bg-cream: #F8F4EC;
+
+     /* 連結橫幅 - 貓咪天空藍 */
+     --cat-banner-sky: #85B8CB;
+
+     /* 主要按鈕 - 橘貓色 */
+     --cat-btn-ginger: #E89A5B;
+
+     /* 按鈕文字 - 純白 */
+     --cat-btn-text: #FFFFFF;
+
+     /* 文字框背景 - 貓掌粉 */
+     --cat-input-paw: #FFF0E8;
+
+     /* 一般文字 - 深咖啡 */
+     --cat-text-mocha: #4A3F35;
+
+     /* 了解更多按鈕 - 肉球粉 */
+     --cat-more-pink: #D98B9B;
+ }
+
+ .fw-100 {
+     font-weight: 100;
+ }
+
+ .fw-200 {
+     font-weight: 200;
+ }
+
+ .fw-300 {
+     font-weight: 300;
+ }
+
+ .fw-400 {
+     font-weight: 400;
+ }
+
+ .fw-500 {
+     font-weight: 500;
+ }
+
+ .fw-600 {
+     font-weight: 600;
+ }
+
+ .fw-700 {
+     font-weight: 700;
+ }
+
+ .fw-800 {
+     font-weight: 800;
+ }
+
+ .fw-900 {
+     font-weight: 900;
+ }
+
+ /* 字體顏色 */
+ .btn-text-sky {
+     color: var(--cat-banner-sky);
+ }
+
+ .btn-text-pink {
+     color: var(--cat-more-pink);
+ }
+
+ /* 上下左右遮罩覆蓋 */
+ /* 由上往下 */
+ .roller-t {
+     position: relative;
+     overflow: hidden;
+ }
+
+ .roller-t .roller_box {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     top: -100%;
+     /* 將roller_box */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: top 1s;
+ }
+
+ .roller-t:hover .roller_box {
+     top: 0;
+ }
+
+ /* 由左往右 */
+ .roller-l {
+     position: relative;
+     overflow: hidden;
+ }
+
+ .roller-l .roller_box {
+     top: 0;
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     left: -100%;
+     /* 將roller_box */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: left 1s;
+ }
+
+ .roller-l:hover .roller_box {
+     left: 0;
+ }
+
+ /* 由上往下 */
+ .roller-b {
+     position: relative;
+     overflow: hidden;
+ }
+
+ .roller-b .roller_box {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     bottom: -100%;
+     /* 將roller_box */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: bottom 1s;
+ }
+
+ .roller-b:hover .roller_box {
+     bottom: 0;
+ }
+
+ /* 由右往左 */
+ .roller-r {
+     position: relative;
+     overflow: hidden;
+ }
+
+ .roller-r .roller_box {
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.5);
+     right: -100%;
+     /* 將roller_box */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: right 1s;
+ }
+
+ .roller-r:hover .roller_box {
+     right: 0;
+ }
+
+ /* 背景圖 */
+ .bg-cover {
+     background-position: center center;
+     background-size: cover;
+ }
+
+ /* 時間軸 */
+ .timeline-section {
+     position: relative;
+ }
+ .timeline-section::before {
+     position: absolute;
+     content: "";
+     top: 10px;
+     bottom: 0;
+     width: 5px;
+     background-color: rgb(2, 59, 59);
+     left: 50%;
+     transform: translateX(-50%);
+ }
+ .timeline-section-pointer {
+     position: relative;
+ }
+ .timeline-section-pointer::before {
+     position: absolute;
+     content: "";
+     width: 20px;
+     height: 20px;
+     background-color: azure;
+     top: 50%;
+     border-radius: 50%;
+     left: 50%;
+     transform: translateX(-50%);
+     border: 5px solid #000;
+ }
+ /* 手機格式把線跟點消失 */
+ @media screen and (max-width:768px) {
+
+     .timeline-section::before,
+     .timeline-section-pointer::before {
+         display: none;
+     }
+ }

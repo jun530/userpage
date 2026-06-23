@@ -1,0 +1,133 @@
+:root {
+   /* =========================
+       背景色系
+    ========================= */
+
+   /* 網頁主背景 */
+   --bg-primary: #F5F7FA;
+
+   /* 區塊背景 */
+   --bg-secondary: #FFFFFF;
+
+   /* 深色區塊背景 */
+   --bg-dark: #1E293B;
+
+   /* Hero Banner背景 */
+   --bg-hero: #0F172A;
+
+   /* =========================
+       導覽列
+    ========================= */
+
+   /* Navbar背景 */
+   --nav-bg: #0F172A;
+
+   /* Navbar文字 */
+   --nav-text: #F8FAFC;
+
+   /* Navbar Hover */
+   --nav-hover: #38BDF8;
+
+   /* =========================
+       文字色系
+    ========================= */
+
+   /* 主標題 */
+   --text-title: #0F172A;
+
+   /* 副標題 */
+   --text-subtitle: #334155;
+
+   /* 內文 */
+   --text-content: #475569;
+
+   /* 淺色文字 */
+   --text-light: #F8FAFC;
+
+   /* =========================
+       技能標籤
+    ========================= */
+
+   /* Skill Tag背景 */
+   --skill-bg: #DBEAFE;
+
+   /* Skill Tag文字 */
+   --skill-text: #1D4ED8;
+
+   /* =========================
+       按鈕
+    ========================= */
+
+   /* 主要按鈕 */
+   --btn-primary: #2563EB;
+
+   /* 主要按鈕Hover */
+   --btn-primary-hover: #1D4ED8;
+
+   /* 按鈕文字 */
+   --btn-text: #FFFFFF;
+
+   /* 次要按鈕 */
+   --btn-secondary: #14B8A6;
+
+   /* 次要按鈕Hover */
+   --btn-secondary-hover: #0F766E;
+
+   /* =========================
+       作品集區塊
+    ========================= */
+
+   /* 卡片背景 */
+   --portfolio-card: #FFFFFF;
+
+   /* 卡片陰影 */
+   --portfolio-shadow: rgba(15, 23, 42, 0.12);
+
+   /* 作品標籤 */
+   --portfolio-tag: #E0F2FE;
+
+   /* =========================
+       學習歷程 Timeline
+    ========================= */
+
+   /* 時間軸主色 */
+   --timeline-primary: #2563EB;
+
+   /* 時間軸節點 */
+   --timeline-node: #38BDF8;
+
+   /* 時間軸背景 */
+   --timeline-bg: #EFF6FF;
+
+   /* =========================
+       聯絡資訊
+    ========================= */
+
+   /* Email */
+   --contact-email: #2563EB;
+
+   /* Github */
+   --contact-github: #24292F;
+
+   /* LinkedIn */
+   --contact-linkedin: #0077B5;
+
+   /* =========================
+       強調色
+    ========================= */
+
+   /* CTA按鈕 */
+   --accent-orange: #F97316;
+
+   /* CTA Hover */
+   --accent-orange-hover: #EA580C;
+
+   /* 成功提示 */
+   --success: #22C55E;
+
+   /* 警告 */
+   --warning: #EAB308;
+
+   /* 錯誤 */
+   --danger: #EF4444;
+}
