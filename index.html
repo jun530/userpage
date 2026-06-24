@@ -4,100 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人頁面</title>
+    <title>楊硯鈞｜個人作品集</title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/userpage.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-color: var(--bg-primary);
         }
-        .s01{
-            background-color:var(--bg-secondary);
-            height:100vh ;
+
+        .s01 {
+            background: linear-gradient(135deg,
+                    #312e81,
+                    #4338ca,
+                    #3b82f6);
+            height: 100vh;
             position: relative;
         }
+
         /* s01 */
-        .s01 .box01 {
-            width: 200px;
-            height: 200px;
-            background-color: var(--bg-dark);
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+        .s01 .userImg {
+            width: 250px;
+            height: 250px;
 
-        .s01 .box02 {
-            width: 200px;
-            height: 200px;
-            background-color: var(--bg-dark);
             position: absolute;
-            top: 0;
-            right: 0;
-        }
+            top: 50%;
+            left: 25%;
 
-        .s01 .box03{
-            width: 200px;
-            height: 200px;
-            background-color: var(--bg-dark);
-            position: absolute;
-            left: 0;
-            bottom: 0;
-        }
-        .s01 .box04{
-            width: 200px;
-            height: 200px;
-            background-color: var(--bg-dark);
-            position: absolute;
-            right: 0;
-            bottom: 0;
-        }
-        .s01 .userImg{          
-            position: absolute;
-            top: 100px;
-            bottom: 100px;
-            left: 100px;
-            right: 100px;
-            background-image: url(images/person01.avif);
-            background-position: center, center;
+            transform: translate(-50%, -50%);
+
+            background-image: url(images/cat01.avif);
             background-size: cover;
-            border-radius: 10px;
-            box-shadow: var(--bg-hero);
+            background-position: center;
+
+            border-radius: 50%;
+
+            border: 6px solid white;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
         }
-        .usertext{
+
+        .usertext {
             position: absolute;
-            top: 60%;
-            left: 10%;
-            right: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+            width: 35%;
+            color: white;
         }
+
+        .usertext h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .usertext h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .usertext p {
+            line-height: 1.8;
+        }
+
         /* s02 */
-        .s02{
+        .s02 {
             padding: 80px 10%;
             background-color: var(--text-content);
             text-align: center;
         }
-        .s02 h2{
+
+        .s02 h2 {
             font-size: 36px;
         }
-        .s02 .card{
+
+        .s02 .card {
+            position: relative;
+            padding-bottom: 70px;
             display: inline-block;
-            margin: 15px;
-            width: 240px;
+            vertical-align: top;
+            width: 250px;
+            min-height: 250px;
             background-color: var(--portfolio-card);
+            margin: 15px;
             padding: 20px;
             text-align: left;
             border-radius: 12px;
+            transition: .3s;
         }
 
-        .s02 .card h3{
+        .s02 .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .s02 .card h3 {
             color: var(--skill-text);
             margin-top: 0;
         }
-        .s02 .card p{
+
+        .s02 .card p {
             line-height: 1.7;
             color: var(--text-content);
         }
-        .s02 .card a{
-            display: block;
+
+        .s02 .card a {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
             background-color: var(--btn-secondary);
             text-decoration: none;
             width: 80px;
@@ -105,22 +127,31 @@
             font-size: 15px;
             line-height: 40px;
             border-radius: 7px;
+            text-align: center;
+        }
+
+        .contact {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px 0;
         }
     </style>
 </head>
 
 <body>
     <section class="s01">
-        <div class="box01"></div>
-        <div class="box02"></div>
-        <div class="box03"></div>
-        <div class="box04"></div>
         <div class="userImg"></div>
         <div class="usertext">
-            <h1>我的履歷</h1>
+            <h1>楊硯鈞</h1>
             <hr>
-            <h2>應徵職位:軟體工程師</h2>
-            <p>最佳世紀小時一家引發用戶女生您現在，吃了台中各自，你看周邊。
+            <h2>應徵職位:前端/全端工程師</h2>
+            <p> 畢業於逢甲大學人工智慧學程，
+                目前正持續學習HTML、CSS、JavaScript、Python與資料庫等技術，
+                未來希望能朝全端開發方向發展。
             </p>
         </div>
     </section>
@@ -128,28 +159,48 @@
         <h2>我的作品</h2>
 
         <!-- 作品01 -->
-         <div class="card">
+        <div class="card">
             <h3>切版練習</h3>
             <p>使用html、css、Javascript練習切版</p>
             <a href="20260527.html">查看作品</a>
-         </div>
-         <!-- 作品02 -->
-         <div class="card">
+        </div>
+        <!-- 作品02 -->
+        <div class="card">
             <h3>Table排版</h3>
-            <p>使用html、css、Javascript排版練習</p>
-<<<<<<< HEAD
+            <p>使用html、css、Bootstrap製作ERP商品管理介面,使用table元件呈現商品資訊</p>
             <a href="20260605-ch5-.html">查看作品</a>
-=======
-            <a href="20260605-ch5.html">查看作品</a>
->>>>>>> c5cc68f472544b2f74cba945f1810d414316986b
-         </div>
-         <!-- 作品03 -->
-         <div class="card">
-            <h3>Google</h3>
-            <p>使用GOOGLE搜尋</p>
-            <a href="https://www.google.com/">查看作品</a>
-         </div>
+        </div>
+        <!-- 作品03 -->
+        <div class="card">
+            <h3>Bootstrap套用練習</h3>
+            <p>利用Bootstrap練習使用已有Navbar等元件設計網站</p>
+            <a href="20260605.html">查看作品</a>
+        </div>
+        <!-- 作品04 -->
+        <div class="card">
+            <h3>時間軸練習</h3>
+            <p>使用html、css、Bootstrap製作響應式時間軸頁面，透過card排版及動畫效果來呈現內容</p>
+            <a href="20260623-ch7-practice.html">查看作品</a>
+        </div>
+        <!-- 作品04 -->
+        <div class="card">
+            <h3>更多作品</h3>
+            <p>持續更新中</p>
+            <a href="#"> 施工中</a>
+        </div>
     </section>
+    <section id="contact" class="contact">
+
+        
+        <h2>聯絡方式</h2>
+
+        <p>Email：pandajun530@gmail.com</p>
+
+        <p>GitHub：github.com/youraccount</p>
+        
+
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

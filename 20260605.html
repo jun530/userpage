@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        body {
+            background-color: #fdf8f3;
+        }
+
+        .card {
+            padding: 15px;
+            /* 圖片與外框產生距離 */
+            border-radius: 20px;
+            border: 5px solid;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 12px;
+        }
+
+        .card-body {
+            background-color: #fffaf5;
+        }
+
+        .card-title {
+            color: #d2691e;
+            font-weight: bold;
+        }
+
+        .card-text {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #343a40;
+            margin-top: 30px;
+            padding: 15px;
+        }
+
+        footer .nav-link {
+            color: white;
+        }
+
+        .container {
+            margin-top: 15px;
+        }
+
+        /* 不同顏色外框 */
+        .col:nth-child(1) .card {
+            border-color: #ffb703;
+            /* 黃色 */
+        }
+
+        .col:nth-child(2) .card {
+            border-color: #fb8500;
+            /* 橘色 */
+        }
+
+        .col:nth-child(3) .card {
+            border-color: #8ecae6;
+            /* 淺藍 */
+        }
+
+        .col:nth-child(4) .card {
+            border-color: #90be6d;
+            /* 綠色 */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-chalkboard-user fa-2x"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            <i class="fa-regular fa-house"></i>首頁
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-info"></i>關於我們
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-book"></i>
+                            貓咪們
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">橘貓</a></li>
+                            <li><a class="dropdown-item" href="#">虎斑貓</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">更多貓咪</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled"><i class="fa-solid fa-hourglass-half"></i>敬請期待</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="搜尋" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="images/cat01.avif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fa-solid fa-cat text-warning"></i>
+                            奶油布丁
+                        </h5>
+                        <p class="card-text">
+                            店內最受歡迎的橘貓，喜歡窩在窗邊曬太陽，歡迎一起享受悠閒午後時光。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/cat02.avif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fa-solid fa-cat text-warning"></i>
+                            小黑咖啡
+                        </h5>
+                        <p class="card-text">
+                            活潑好動的黑貓店長，經常在客人身旁巡邏，是咖啡廳的人氣明星。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/cat03.avif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fa-solid fa-cat text-warning"></i>
+                            棉花糖
+                        </h5>
+                        <p class="card-text">
+                            擁有柔軟白毛的療癒系貓咪，最喜歡被輕輕摸摸，是許多客人的最愛。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/cat01.avif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fa-solid fa-cat text-warning"></i>
+                            拿鐵先生
+                        </h5>
+                        <p class="card-text">
+                            慵懶又親人的虎斑貓，常陪伴客人閱讀與工作，帶來滿滿療癒感。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Powered By XXX</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">TOP</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://www.google.com/">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled">NoThing</a>
+            </li>
+        </ul>
+    </footer>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
