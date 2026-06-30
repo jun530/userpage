@@ -7,14 +7,212 @@
     <title>ch11 表單練習(JavaScript)</title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/my.css">
+    <style>
+        body {
+            background: #eef2f7;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        /* 整個表單 */
+        #s01>.row,
+        #s02 {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+            padding: 25px;
+        }
+
+        /* 標題 */
+        .display-4,
+        .display-5 {
+            border-radius: 10px;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .display-4 {
+            background: #0d6efd !important;
+        }
+
+        .display-5 {
+            background: #198754 !important;
+        }
+
+        /* Label */
+        .form-label,
+        label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        /* Input */
+        .form-control,
+        .form-select {
+
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            transition: .2s;
+            box-shadow: none;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 .15rem rgba(13, 110, 253, .15);
+        }
+
+        /* 浮動輸入框 */
+        .form-floating>label {
+            color: #666;
+        }
+
+        /* Switch */
+        .form-switch {
+            margin-top: 25px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        /* Checkbox Radio 區塊 */
+
+        #topping_group,
+        #supply_group {
+
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+            padding: 15px;
+        }
+
+        /* 每一列 */
+
+        .form-check {
+
+            margin-bottom: 8px;
+        }
+
+        .form-check:last-child {
+
+            margin-bottom: 0;
+        }
+
+        /* 驗證 */
+
+        .is-valid {
+
+            border-color: #198754 !important;
+        }
+
+        .is-invalid {
+
+            border-color: #dc3545 !important;
+        }
+
+        /* feedback */
+
+        .valid-feedback,
+        .invalid-feedback {
+
+            font-size: 14px;
+        }
+
+        /* 按鈕 */
+
+        .btn {
+
+            min-width: 120px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+
+            background: #0d6efd;
+        }
+
+        .btn-secondary {
+
+            background: #6c757d;
+        }
+
+        .btn-warning {
+
+            color: #fff;
+        }
+
+        /* 按鈕hover */
+
+        .btn:hover {
+
+            transform: translateY(-1px);
+            transition: .2s;
+        }
+
+        /* 明細 */
+
+        #showmessage {
+
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #showmessage h3 {
+
+            font-size: 20px;
+            border-bottom: 1px dashed #ddd;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        #showmessage h3:last-child {
+
+            border-bottom: none;
+        }
+
+        /* datalist輸入 */
+
+        input[list] {
+
+            background: #fff;
+        }
+
+        /* 欄位間距 */
+
+        .mb-3 {
+
+            margin-bottom: 22px !important;
+        }
+
+        /* RWD */
+
+        @media (max-width:768px) {
+
+            .display-4,
+            .display-5 {
+
+                font-size: 26px;
+            }
+
+            #s01>.row,
+            #s02 {
+
+                padding: 18px;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
     <div class="container pt-5">
         <div class="row" id="s01">
             <div class="row justify-content-center">
-                <div class="display-4 fw-900 text-center text-bg-primary py-2">飲料產品建檔</div>
+                <div class="display-4 fw-900 text-center text-bg-primary py-2"><i class="fa-solid fa-mug-hot"></i> 飲料產品</div>
                 <div class="col-md-6 mt-3">
                     <div class="mb-3 form-floating">
                         <input type="text" class="form-control form-control-lg" name="" id="pname" placeholder=""
@@ -62,7 +260,7 @@
                     </div>
                     <div class="mb-3 form-check form-switch">
                         <input type="checkbox" name="" id="pstatus" class="form-check-input">
-                        <label for="" class="form-check-label" id="pstatus_text"  >目前狀態 : 下架</label>
+                        <label for="" class="form-check-label" id="pstatus_text">目前狀態 : 下架</label>
                     </div>
                     <div class="mb-3">
                         <div class="form-label fw-900">可加配料:至少要加一種</div>
@@ -108,8 +306,8 @@
                         <div class="invalid-feedback">未選擇供應方式</div>
                     </div>
                     <div class="text-end mt-4">
-                        <button class="btn btn-secondary">取消</button>
-                        <button class="btn btn-primary" id="ok_btn">確認</button>
+                        <button class="btn btn-secondary"><i class="fa-solid fa-xmark"></i>取消</button>
+                        <button class="btn btn-primary" id="ok_btn"><i class="fa-solid fa-check"></i>確認</button>
                     </div>
                 </div>
             </div>
@@ -201,39 +399,39 @@
                 }
             });
             //監聽#pstatus
-            $("#pstatus").on("change",function(){
+            $("#pstatus").on("change", function () {
                 console.log($(this).prop("checked"))
 
                 let pstatus = $(this).prop("checked");
-                if(pstatus){
+                if (pstatus) {
                     $("#pstatus_text").text("目前狀態 : 上架")
-                }else{
+                } else {
                     $("#pstatus_text").text("目前狀態 : 下架")
                 }
             })
             //監聽.topping_item
-            $(".topping_item").on("change",function(){
+            $(".topping_item").on("change", function () {
                 console.log($(".topping_item:checked").length);
                 let count = $(".topping_item:checked").length;
-                if(count>0){
+                if (count > 0) {
                     $("#topping_group").removeClass("is-invalid");
                     $("#topping_group").addClass("is-valid");
                     flag_topping = true;
-                }else{
+                } else {
                     $("#topping_group").addClass("is-invalid");
                     $("#topping_group").removeClass("is-valid");
                     flag_topping = false;
                 }
             });
             //監聽.supply_item
-            $(".supply_item").on("change",function(){
+            $(".supply_item").on("change", function () {
                 console.log($(".supply_item:checked").val());
                 let supply = $(".supply_item:checked").val();
-                if(supply != undefined){
+                if (supply != undefined) {
                     $("#supply_group").removeClass("is-invalid");
                     $("#supply_group").addClass("is-valid");
                     flag_supply = true;
-                }else{
+                } else {
                     $("#supply_group").addClass("is-invalid");
                     $("#supply_group").removeClass("is-valid");
                     flag_supply = false;
@@ -241,19 +439,19 @@
             });
             //按鈕監聽 #ok_btn
             $("#ok_btn").on("click", function () {
-                if (flag_pname && flag_pnum && flag_psize && flag_pstandard&&flag_topping&&flag_supply) {
+                if (flag_pname && flag_pnum && flag_psize && flag_pstandard && flag_topping && flag_supply) {
                     $("#s02").removeClass("d-none")
 
                     //三元運算子
-                    let pstatus=$("#pstatus").prop("checked")?"上架":"下架";
+                    let pstatus = $("#pstatus").prop("checked") ? "上架" : "下架";
 
                     //收集可加配料
                     let toppingArray = [];
-                    $(".topping_item:checked").each(function(){
+                    $(".topping_item:checked").each(function () {
                         toppingArray.push($(this).val());
                     });
                     //供應方式
-                    let supply =  $(".supply_item:checked").val()
+                    let supply = $(".supply_item:checked").val()
 
                     let strHTML = `<h3>產品名稱:${$("#pname").val()}</h3>
                                     <h3>產品數量:${$("#pnum").val()}</h3>
