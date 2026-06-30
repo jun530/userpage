@@ -212,7 +212,8 @@
     <div class="container pt-5">
         <div class="row" id="s01">
             <div class="row justify-content-center">
-                <div class="display-4 fw-900 text-center text-bg-primary py-2"><i class="fa-solid fa-mug-hot"></i> 飲料產品</div>
+                <div class="display-4 fw-900 text-center text-bg-primary py-2"><i class="fa-solid fa-mug-hot"></i> 飲料產品
+                </div>
                 <div class="col-md-6 mt-3">
                     <div class="mb-3 form-floating">
                         <input type="text" class="form-control form-control-lg" name="" id="pname" placeholder=""
@@ -220,11 +221,6 @@
                         <label for="pname" class="form-label">產品名稱(字數1~6)</label>
                         <div class="valid-feedback">產品名稱符合規定</div>
                         <div class="invalid-feedback">產品名稱不符合規定</div>
-                        <datalist id="datalistoption">
-                            <option value="烏龍拿鐵"></option>
-                            <option value="冰淇淋紅茶"></option>
-                            <option value="珍珠奶茶"></option>
-                        </datalist>
 
                         <div class="mb-3">
                             <label for="pnum">數量(1~10)</label>
@@ -317,13 +313,14 @@
             <div class="col-md-6 p-3">
                 <div id="showmessage"></div>
                 <button class="btn btn-secondary mt-3 w-100">取消</button>
-                <button class="btn btn-warning mt-3 w-100">確認送出</button>
+                <button class="btn btn-warning mt-3 w-100" id="send_btn">確認送出</button>
             </div>
         </div>
     </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-4.0.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
     <script>
         let flag_pname = false;
         let flag_pnum = false;
@@ -426,7 +423,10 @@
             //監聽.supply_item
             $(".supply_item").on("change", function () {
                 console.log($(".supply_item:checked").val());
+                //供應方式
                 let supply = $(".supply_item:checked").val();
+                //收集傳遞給後端API的資料
+
                 if (supply != undefined) {
                     $("#supply_group").removeClass("is-invalid");
                     $("#supply_group").addClass("is-valid");
@@ -452,6 +452,17 @@
                     });
                     //供應方式
                     let supply = $(".supply_item:checked").val()
+                    productData = {
+                        pname: $("#pname").val(),
+                        pnum: Number($("#pnum").val()),
+                        pstandard: $("#pstandard").val(),
+                        psize: $("#psize").val(),
+                        pstatus: pstatus,
+                        topping: toppingArray.join("/"),
+                        supply: supply,
+                        created_at: new Date().toLocaleDateString("zh-TW")
+                    };
+                    console.log(productData)
 
                     let strHTML = `<h3>產品名稱:${$("#pname").val()}</h3>
                                     <h3>產品數量:${$("#pnum").val()}</h3>
@@ -470,6 +481,34 @@
                     });
                     $("#s02").addClass("d-none");
                 }
+            })
+            $("#send_btn").on("click", function () {
+                //將productData傳遞至後端
+                axios.post('http://127.0.0.1:3000/product', productData)
+                    .then(function (response) {
+                        console.log(response);
+                        if (response.status == 201) {
+                            Swal.fire({
+                                title: "物料新增成功",
+                                showDenyButton: false,
+                                showCancelButton: false,
+                                confirmButtonText: "確認",
+                                denyButtonText: `Don't save`,
+                                icon:"success",
+                            }).then((result) => {
+                                /* Read more about isConfirmed, isDenied below */
+                                if (result.isConfirmed){
+                                    location.reload()
+                                }
+                            });
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+                    .finally(function () {
+                        // always executed
+                    });
             })
 
         })  
